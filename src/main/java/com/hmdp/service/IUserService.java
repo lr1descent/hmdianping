@@ -19,16 +19,14 @@ public interface IUserService extends IService<User> {
     /**
      * 发送手机验证码
      * @param phone
-     * @param session
      * @return
      */
-    Result sendCode(String phone, HttpSession session);
+    Result sendCode(String phone);
 
     /**
      * 登录功能
      * @param loginForm
-     * @param session
      * @return
      */
-    Result login(LoginFormDTO loginForm, HttpSession session);
+    Result login(LoginFormDTO loginForm);
 }
