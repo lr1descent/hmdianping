@@ -40,12 +40,15 @@ public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> impl
     public void addSeckillVoucher(Voucher voucher) {
         // 保存优惠券
         save(voucher);
+
         // 保存秒杀信息
         SeckillVoucher seckillVoucher = new SeckillVoucher();
+
         seckillVoucher.setVoucherId(voucher.getId());
         seckillVoucher.setStock(voucher.getStock());
         seckillVoucher.setBeginTime(voucher.getBeginTime());
         seckillVoucher.setEndTime(voucher.getEndTime());
+
         seckillVoucherService.save(seckillVoucher);
     }
 }
